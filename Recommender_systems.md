@@ -19,3 +19,21 @@ Observation:
 [arxiv](https://arxiv.org/pdf/2305.00447.pdf)
 [code]( https://anonymous.4open.science/r/LLM4Rec-Recsys)
 - TALLRec: Tuning framework for Aligning LLMs with Recommendation, namely TALLRec
+
+
+###  Learning from Bandit Feedback: AnOverview of the State-of-the-art
+[arxiv](https://arxiv.org/abs/1909.08471)
+[code](https://github.com/leoguelman/BLBF)
+- It is diffficult to estimate peroformance of policies that frequently perform actions that were infrequently done in the past.
+- Through importance sampling and variance reduction techniques, CRM (Counter factual risk minimization) methods allow robust learning.
+- Notations
+  1. User state x R_n, action a, reward c
+  2. Train a logistic regression model to predit (C|x,a). But this model w![Screenshot 2024-04-04 at 10 27 55 AM](https://github.com/mansimane/reading_journal/assets/23171195/61f49f5a-23bd-4dd6-bff1-bceb5436d2a3)
+ill underfit to examples where there is less data x,a pairs if a was not recommendeded often in the past. So during the training, the samples (x_i, a_i, c_i) are re-weighted using inverse propensity score. (NOTE: this is beneficial only if model lacks capacity to correctly model complete relationship).
+![Uploading Screenshot 2024-04-04 at 10.27.55 AM.png…]()
+
+  4. Contexual bandits: to predict probability of the action given the context P(a|x), 
+  5. The authors propouse to train a contextual bandit to predict P(a|x) and another bandit to predict  P(c|a,x) jointly. 
+  6. Dual bandit: LLdual(θ) = (1 −α)LCB(θ) + αLLH(θ)
+  7. Summary: Authoers propose to jointly optimize two bandits during training one to predict reward and another to predict action given context. The reward bandit will be used to generate training sample for action bandit. Howerver they do not explain why we can't do it one after the other. We can first optimize the reward bandit and then use it to train action bandit. 
+  8. 
