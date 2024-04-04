@@ -36,4 +36,11 @@ ill underfit to examples where there is less data x,a pairs if a was not recomme
   5. The authors propouse to train a contextual bandit to predict P(a|x) and another bandit to predict  P(c|a,x) jointly. 
   6. Dual bandit: LLdual(θ) = (1 −α)LCB(θ) + αLLH(θ)
   7. Summary: Authoers propose to jointly optimize two bandits during training one to predict reward and another to predict action given context. The reward bandit will be used to generate training sample for action bandit. Howerver they do not explain why we can't do it one after the other. We can first optimize the reward bandit and then use it to train action bandit. 
-  8. 
+
+
+  ### On the Value of Bandit Feedback for Offline Recommender System Evaluation
+  [arxiv](https://arxiv.org/abs/1907.12384)
+  - Paper shows how bandit feedback would be used for effective offline evaluation that more accurately reflects online performance
+  - The aurthers do k fold validation for 6 methods to predict performance. And then they do counter factual estimation using Clipped IPS for the same methods. For random sampling method, both counter factual and k fold gives bad results but it acutally does better in AB tests. But for other methods, counterfactual estimate give good estimates compared to k fold offline evaluation. 
+  
+![Screenshot 2024-04-04 at 11 51 58 AM](https://github.com/mansimane/reading_journal/assets/23171195/6dd171a4-8376-4f3d-aae1-341737acb4c3)
