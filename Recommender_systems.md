@@ -44,3 +44,20 @@ ill underfit to examples where there is less data x,a pairs if a was not recomme
   - The aurthers do k fold validation for 6 methods to predict performance. And then they do counter factual estimation using Clipped IPS for the same methods. For random sampling method, both counter factual and k fold gives bad results but it acutally does better in AB tests. But for other methods, counterfactual estimate give good estimates compared to k fold offline evaluation. 
   
 ![Screenshot 2024-04-04 at 11 51 58 AM](https://github.com/mansimane/reading_journal/assets/23171195/6dd171a4-8376-4f3d-aae1-341737acb4c3)
+
+
+### Multi-task Learning for Related Products Recommendations at Pinterest
+[link](https://medium.com/pinterest-engineering/multi-task-learning-for-related-products-recommendations-at-pinterest-62684f631c12)
+- ![image](https://github.com/mansimane/reading_journal/assets/23171195/b7d2b2c1-f998-4893-9a59-2981e1f80627)
+- importance weight in the loss function is chosen for each engagement type according to their business values.
+- where ImportanceWeight(i)is determined by the engagement type of sample i, y ⁽ᶦ⁾ binary is the true binary label, which is 1 for an impression with engagement (close-up, save, click, or long-click) or 0 otherwise, and ŷ ⁽ᶦ⁾ binary is the predicted score for sample i. This method has following drawbacks:
+- This simplified approach is easy to implement and model agnostic, but it leads to a series of problems:
+
+    We lose information by combining different engagement types into one binary label. If a user both saves and long clicks a Pin, we have to drop one of the user’s actions since only one type of engagement can be chosen for each sample. An alternative would be to duplicate the training data using a different engagement per sample.
+    The predicted score is not interpretable. It tells us how “engaging” a candidate is but its exact meaning is determined by the importance weights we choose.
+    The task of engagement prediction is coupled with business value. If we ever want to try a different set of importance weights, we need to retrain the model, which is detrimental to developer and experimentation velocity.
+
+
+  The key difference between the loss function in Eq.2 and the one in Eq.1 is that we do not lose engagement information. The four output heads can borrow knowledge from each other by sharing the previous layers, and this would also alleviate the overfitting problem compared to fitting one model for each engagement type
+  but the gain is subtle because the four tasks are similar to each other. herefore, we ended up using equal weights for the losses for simplicity.
+
