@@ -35,7 +35,8 @@ ill underfit to examples where there is less data x,a pairs if a was not recomme
   4. Contexual bandits: to predict probability of the action given the context P(a|x), 
   5. The authors propouse to train a contextual bandit to predict P(a|x) and another bandit to predict  P(c|a,x) jointly. 
   6. Dual bandit: LLdual(θ) = (1 −α)LCB(θ) + αLLH(θ)
-  7. Summary: Authoers propose to jointly optimize two bandits during training one to predict reward and another to predict action given context. The reward bandit will be used to generate training sample for action bandit. Howerver they do not explain why we can't do it one after the other. We can first optimize the reward bandit and then use it to train action bandit. 
+  7. Experiments: The authors did simulations in RecoGym environment and presented the results. The the methods are not deployed in real world production system. 
+  8. Summary: Authoers propose to jointly optimize two bandits during training one to predict reward and another to predict action given context. The reward bandit will be used to generate training sample for action bandit. Howerver they do not explain why we can't do it one after the other. We can first optimize the reward bandit and then use it to train action bandit. Accuracy of reward bandit is very imporatant for good action bandit performance. It could be challenging to learn the reward bandit first. 
 
 
   ### On the Value of Bandit Feedback for Offline Recommender System Evaluation
