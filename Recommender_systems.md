@@ -42,7 +42,7 @@ ill underfit to examples where there is less data x,a pairs if a was not recomme
   ### On the Value of Bandit Feedback for Offline Recommender System Evaluation
   [arxiv](https://arxiv.org/abs/1907.12384)
   - Paper shows how bandit feedback would be used for effective offline evaluation that more accurately reflects online performance
-  - The aurthers do k fold validation for 6 methods to predict performance. And then they do counter factual estimation using Clipped IPS for the same methods. For random sampling method, both counter factual and k fold gives bad results but it acutally does better in AB tests. But for other methods, counterfactual estimate give good estimates compared to k fold offline evaluation. 
+  - The aurthers do k fold validation for 6 methods to predict performance. And then they do counter factual estimation using Clipped IPS for the same methods. For random sampling method, both counter factual and k fold gives bad results but it acutally does better in AB tests, this is because of bias in eval data. But for other methods, counterfactual estimate give good estimates compared to k fold offline evaluation. 
   
 ![Screenshot 2024-04-04 at 11 51 58 AM](https://github.com/mansimane/reading_journal/assets/23171195/6dd171a4-8376-4f3d-aae1-341737acb4c3)
 
