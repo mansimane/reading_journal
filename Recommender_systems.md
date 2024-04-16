@@ -81,6 +81,21 @@ As a hypothetical, we may determine that 92% of listening sessions terminate aft
 
 
 
+###  GenSERP: Large Language Models for Whole Page Presentation
+  [arxiv](https://arxiv.org/pdf/2402.14301.pdf)
+
+- Authors use Gen AI based whole page optimization for Bing.com
+- There are three stages:
+  - Information gathering: LLM calls diffrent APIs to extract items relevant to queries e.g. news articles related to query, ads related to query etc
+  - Candidate Presentation Generation: Untile LLMs is confident, it tried diffrent UX configurations for showing the items in different rankings. The confidence score is threshould. The proposals are then rendered and given to vision model. 
+  - Scoring: Candiate scores are generated based on by LLM with vision to rank quality of page visually. 
+  - ![image](https://github.com/mansimane/reading_journal/assets/23171195/38044b8f-bd7f-47bf-80df-f0ac72f9753d)
+
+- They didn't get as good results as existing bing logic, especially they did pretth bad on ecommerce, but did pretty well on healthe and entertainment.
 
 
-
+### An Efficient Bandit Algorithm for Realtime Multivariate Optimization
+ [arxiv](https://assets.amazon.science/be/1f/27be73114b198fe14869e75b6ef6/an-efficient-bandit-algorithm-for-realtime-multivariate-optimization.pdf)
+ - D Slots for the page which are bandit arms, R reward, X context, A action, B_(A,X) - feature vector combining features like image selected in past, users age, time of the day etc. mu is the weight matrix,
+ - 
+  
