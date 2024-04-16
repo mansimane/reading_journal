@@ -71,11 +71,13 @@ They chose TensorFlow Agents (TF-Agents) as their RL library
 - Agent Models: Proximal Policy Optimization (PPG), Deep Q-Network (DQN), and a modified version called Action-Head DQN (AH-DQN).
 - Live experiments demonstrated that offline performance estimates strongly correlated with online results.
 
-_episode_sampler - Defines environment
-_user_model - provides feedback to RL agent
-action_spec- can't be discrete as there are too many songs, _track_sampler - consumes possible recommendations and then emits actual recommendations
-observation_spec -
-Terminiationand reset= As a hypothetical, we may determine that 92% of listening sessions terminate after 6 sequential track skips and we’d construct our simulation termination logic to match,we design abstractions in our simulator that allow us
+- _episode_sampler - Defines environment
+- _user_model - provides feedback to RL agent
+- action_spec- can't be discrete as there are too many songs, _track_sampler - consumes possible recommendations and then emits actual recommendations
+- observation_spec -
+Terminiationand reset= Authors synthetically generate user behavior based on 
+
+As a hypothetical, we may determine that 92% of listening sessions terminate after 6 sequential track skips and we’d construct our simulation termination logic to match, we design abstractions in our simulator that allow us to 
 
 
 
