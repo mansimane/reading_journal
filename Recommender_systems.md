@@ -99,3 +99,16 @@ As a hypothetical, we may determine that 92% of listening sessions terminate aft
  - D Slots for the page which are bandit arms, R reward, X context, A action, B_(A,X) - feature vector combining features like image selected in past, users age, time of the day etc. mu is the weight matrix,
  - 
   
+### Beyond the binge: Recommending for long-term member satisfaction at Netflix
+ [pdf]([https://assets.amazon.science/be/1f/27be73114b198fe14869e75b6ef6/an-efficient-bandit-algorithm-for-realtime-multivariate-optimization.pdf](https://acrobat.adobe.com/id/urn:aaid:sc:US:6421444c-6fa3-4d9a-875d-623c690986cf?viewer%21megaVerb=group-discover)
+ - Long term retention is noisy and is dependent on external factors so hard to attribute
+ - Instead we can train on proxy rewards such as completing the show, binge watching the show
+ - But even proxy rewards can be delayed which can hurt model performance
+ - As a solution policy network is trained to predict delayed reward for each example during training
+ - During online setting computer proxy reward as predicted reward (for delayed feedback heads) + observable feedback
+ - proxy reward = g(observed reward)
+ - Challenges- proxy rewards are not aligned with online metrics
+
+### Reward innovation for long-term member satisfaction
+
+https://acrobat.adobe.com/id/urn:aaid:sc:US:2334c55e-5792-4864-9699-d194cfe15729?comment_id=cce62d81-e963-4fe2-b3d0-3b4e2a4dda3d
