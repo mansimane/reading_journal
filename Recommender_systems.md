@@ -112,3 +112,16 @@ As a hypothetical, we may determine that 92% of listening sessions terminate aft
 ### Reward innovation for long-term member satisfaction
 
 https://acrobat.adobe.com/id/urn:aaid:sc:US:2334c55e-5792-4864-9699-d194cfe15729?comment_id=cce62d81-e963-4fe2-b3d0-3b4e2a4dda3d
+
+
+### The Whole-Page Optimization via Dynamic Ad Allocation 
+ [pdf](https://dl.acm.org/doi/pdf/10.1145/3184558.3191584)
+ - Most search engines keeps number of ad slots in a carousal fix. This paper keeps the ads slots dynamic using linear optimization framework
+ - Deployed in Alibaba
+ - Click yield (CY) is defined as - Number of clicks/number of page impressions rather than CTR
+ - REV- Depends on CPC of ads and CTRs
+ - They have a predictor DNN model which predicts Rev and CY given a list of items. For each list (which can have different number of ad items and organic items) they predict both Rev and CY. And then they choose list with max Rev + Alpha*CY. The input features for the predictor are performance (estimated ctr ,estimated revenue per impression (rpm), item information (price, category, type (ad or organic item), etc.) and contextual information
+(the nearby items’ information). 
+ - Alpha is chosen by doing linear optimization on offline data. i.e. given past lists, and it's rev and CY, find alpha for given T. 
+ - 
+ 
