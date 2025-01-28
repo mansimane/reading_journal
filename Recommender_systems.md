@@ -124,4 +124,7 @@ https://acrobat.adobe.com/id/urn:aaid:sc:US:2334c55e-5792-4864-9699-d194cfe15729
 (the nearby items’ information). 
  - Alpha is chosen by doing linear optimization on offline data. i.e. given past lists, and it's rev and CY, find alpha for given T. 
  - 
- 
+ ### Multi-channel Integrated Recommendation with Exposure Constraints
+ [pdf](https://arxiv.org/pdf/2305.12319)
+- Proposes primal dual formualtion to optimize utility functions like ctr, atcr while meeting exposure constraints
+-  
