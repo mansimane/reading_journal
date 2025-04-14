@@ -127,4 +127,40 @@ https://acrobat.adobe.com/id/urn:aaid:sc:US:2334c55e-5792-4864-9699-d194cfe15729
  ### Multi-channel Integrated Recommendation with Exposure Constraints
  [pdf](https://arxiv.org/pdf/2305.12319)
 - Proposes primal dual formualtion to optimize utility functions like ctr, atcr while meeting exposure constraints
--  
+
+
+### Email Volume Optimization at LinkedIn
+ [pdf](https://arxiv.org/pdf/2305.12319)
+ - members who received all email messages generated for them performed 2.6% more page views than the members who randomly received about half of the email
+ - Created 4 segements - daily-active (visited everyday), weekly-active (visited once a week), monthly-active (visited once a month) and dormant(remaining).x of these members are active when no emails are sent to these members, then more than 2x members will be active if a large number of emails are sent to these members
+- Psess(xe) = Pr(downstream session from e |e is sent)
+- Pcomp(xe) = Pr(complaint from e |e is sent)
+- Formulate the multiobjective system that can output optimal combinations of sends, sessions and complaints.
+- For training- for a given user, they generate P(drop) for a month, if p(drop) is 0.8, they send 8 emails to that customers
+- Contraned optimization on global expected email send 
+- Pros:
+- Does not put explicity constraints on email volume, but need to define the hyper-parameters
+- Cons:
+  - Does not model Psess(xe) when e is not sent,
+ 
+### Notification Volume Control and Optimization System at Pinterest
+- Predict weekly notification budget for each user
+- Utility of a notification = p(a|u)= p(ao |u)+ (1−p(ao |u))×p(an |u)
+- p(ao |u)is the probability that the user comes to the site organically
+- p(an |u)is the user’s CTR of notifications.
+- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
